@@ -1,9 +1,10 @@
+// Author: Harshil Hemal Patel
 'use strict';
 
 var AWS = require('aws-sdk');
 
 var dynamo = new AWS.DynamoDB();
-
+//fetching student username from chat conversation table
 exports.handler = function (event, context, callback) {
     dynamo.query({
         TableName: 'Chat-Conversations',
@@ -50,7 +51,7 @@ function finished(convos) {
     }
     return true;
 }
-
+// loading sucessful query result based on their id's
 function loadDetails(ids, callback) {
     console.log("Loading details");
     var convos = [];
@@ -67,7 +68,7 @@ function loadDetails(ids, callback) {
         callback(null, convos);
     }
 }
-
+//fetching the last conversation between id's
 function loadConvoLast(convo, convos, callback) {
     dynamo.query({
         TableName: 'Chat-Messages',
