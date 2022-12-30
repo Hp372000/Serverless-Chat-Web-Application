@@ -1,3 +1,5 @@
+// this is the index page which is responsible for routing{POST & GET} the request from the user to other lambda functions. 
+
 'use strict';
 
 var AWS = require('aws-sdk');
@@ -16,7 +18,7 @@ exports.handler = function (event, context, callback) {
             }
         });
     };
-
+//lambda function is integrated with api gateway for a given path
     var path = event.pathParameters.proxy;
 
     if (path === 'conversations') {
