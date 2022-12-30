@@ -1,3 +1,4 @@
+// registered user from userpool will be fetched
 'use strict';
 
 var AWS = require('aws-sdk');
