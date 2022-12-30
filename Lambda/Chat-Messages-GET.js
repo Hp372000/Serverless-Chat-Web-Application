@@ -3,7 +3,7 @@
 var AWS = require('aws-sdk');
 
 var dynamo = new AWS.DynamoDB();
-
+// fetching query to get chat messages information such as messages, timestamp, id
 exports.handler = function (event, context, callback) {
     dynamo.query({
         TableName: 'Chat-Messages',
