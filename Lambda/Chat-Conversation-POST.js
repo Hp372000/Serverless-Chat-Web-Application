@@ -1,8 +1,5 @@
 'use strict';
-
-// For some reason this next line doesn't work for some students:
-//const uuidV4 = require('uuid/v4');
-// But this does:
+// a unique token is generated everytime whenever there is new user{Primary Key}
 const { v4: uuidV4 } = require('uuid');
 
 var AWS = require('aws-sdk');
@@ -28,7 +25,7 @@ exports.handler = function (event, context, callback) {
             }
         });
     });
-
+//write items into chat conversation table
     dynamo.batchWriteItem({
         RequestItems: {
             'Chat-Conversations': records
