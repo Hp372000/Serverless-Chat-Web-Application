@@ -3,7 +3,7 @@
 var AWS = require('aws-sdk');
 
 var dynamo = new AWS.DynamoDB();
-
+// write messages in the chat-message table
 exports.handler = function (event, context, callback) {
     dynamo.putItem({
         TableName: 'Chat-Messages',
